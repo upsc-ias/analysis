@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Analysis</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Poppins font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+<header>
+    <h1>🎯UPSC Prelims MCQ Analysis</h1>
+    <button id="themeToggleBtn" class="themeBtn">🔆</button>
+</header>
+
+<div id="filterBar">
+    <label>🔎Filter Questions:</label>
+
+    <select id="filterStatus">
+        <option value="all">Status: All</option>
+        <option value="correct">Correct</option>
+        <option value="incorrect">Incorrect</option>
+        <option value="unattempted">Unattempted</option>
+    </select>
+
+    <select id="filterDifficulty">
+        <option value="all">Difficulty: All</option>
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+    </select>
+
+    <select id="filterReason">
+        <option value="all">Reason: All</option>
+
+        <optgroup label="Correct Reasons">
+            <option value="Knowledge-Based">Knowledge-Based</option>
+            <option value="MAD Apply">MAD Apply</option>
+            <option value="50:50 (Good-Luck)">50:50 (Good-Luck)</option>
+            <option value="PYQ-Based">PYQ-Based</option>
+        </optgroup>
+
+        <optgroup label="Incorrect Reasons">
+            <option value="Source-Issue">Source-Issue</option>
+            <option value="Reading-Issue">Reading-Issue</option>
+            <option value="Recall-Issue">Recall-Issue</option>
+            <option value="Application / Focus-Issue">Application / Focus-Issue</option>
+            <option value="MAD Error">MAD Error</option>
+            <option value="50:50 (Bad-Luck)">50:50 (Bad-Luck)</option>
+        </optgroup>
+    </select>
+
+    <span id="filterCount" class="filter-count">Showing 100 / 100 questions</span>
+
+</div>
+
+
+
+<div id="questionsContainer"></div>
+
+<div id="reportBox">
+    <h2>📓Report Summary📓</h2>
+    <p id="reportCorrect"></p>
+    <p id="reportIncorrect"></p>
+
+    <h3>✅Correct Reasons:</h3>
+    <p id="correctOptions"></p>
+
+    <h3>❌Incorrect Reasons:</h3>
+    <p id="incorrectOptions"></p>
+
+    <h3>🧠Difficulty Count:</h3>
+    <p id="reportDifficulty"></p>
+
+    <button id="resetBtn">Reset All</button>
+</div>
+
+<div id="analyticsBox">
+    <h2>📊 Performance Analytics Dashboard</h2>
+
+    <div class="charts-column">
+        <div class="chart-card">
+            <h3>Difficulty Distribution</h3>
+            <canvas id="difficultyPie"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>Correct Reasons</h3>
+            <canvas id="correctBar"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>Incorrect Reasons</h3>
+            <canvas id="incorrectBar"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Scroll Controls -->
+<div class="scroll-controls">
+    <button id="scrollToggleBtn" class="scroll-btn">⬇</button>
+</div>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <span class="footer-line"></span>
+
+        <span class="footer-text">
+            Designed With <span class="heart">❤️</span> 
+            By <span class="author glow-name">Raj Kumar</span>
+        </span>
+
+        <span class="footer-line"></span>
+    </div>
+</footer>
+
+<!-- Chart.js first, then your script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
